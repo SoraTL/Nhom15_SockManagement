@@ -1,0 +1,10 @@
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.csproj.AssemblyReference.cache
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.Properties.Resources.resources
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.csproj.GenerateResource.cache
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.csproj.CoreCompileInputs.cache
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\bin\Debug\PJ_Socks_App.exe.config
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\bin\Debug\PJ_Socks_App.exe
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\bin\Debug\PJ_Socks_App.pdb
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.exe
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.pdb
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.frmLogin.resources
