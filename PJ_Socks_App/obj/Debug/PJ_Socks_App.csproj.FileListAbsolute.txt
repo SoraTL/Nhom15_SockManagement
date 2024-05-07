@@ -8,3 +8,5 @@ C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\bi
 C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.exe
 C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.pdb
 C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.frmLogin.resources
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.main.UI.frmHome.resources
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.main.UI.frmSignup.resources

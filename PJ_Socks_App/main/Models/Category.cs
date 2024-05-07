@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace PJ_Socks_App.main.Models
 {
-    [Table(Name = "Accounts")]
-    public class Account
+    [Table(Name = "Categories")]
+    public class Category
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
@@ -17,16 +17,7 @@ namespace PJ_Socks_App.main.Models
         public string Name { get; set; }
 
         [Column]
-        public string Email { get; set; }
-
-        [Column]
-        public string Password { get; set; }
-
-        [Column]
-        public string Role { get; set; }
-
-        [Column]
-        public string Phone { get; set; }
+        public string Description { get; set; }
 
         [Column]
         public string Status { get; set; }

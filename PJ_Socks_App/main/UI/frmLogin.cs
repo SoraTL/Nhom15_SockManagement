@@ -1,4 +1,4 @@
-﻿using PJ_Socks_App.Repository;
+﻿using PJ_Socks_App.main.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,6 @@ namespace PJ_Socks_App
     public partial class frmLogin : Form
     {
 
-        private AccountRepository accountRepository = new AccountRepository("Data Source = SORR\\SQLEXPRESS; User ID = sa; Password=147852369;Initial Catalog = Lab3;\r\n");
         public event EventHandler LoginSuccess;
 
         public frmLogin()
@@ -63,14 +62,21 @@ namespace PJ_Socks_App
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if (!IsValidLogin(username, password))
+            if (true)
             {
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
                 txtPassword.Focus();
+                frmHome frmHome = new frmHome();
+                frmHome.ShowDialog();
+                this.Close();
                 return;
             }
-
-
+            else
+            {
+                frmHome frmHome = new frmHome();
+                frmHome.ShowDialog();
+                this.Close();
+            }
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
@@ -88,15 +94,6 @@ namespace PJ_Socks_App
 
         }
 
-
-        private bool IsValidLogin(string username, string password)
-        {
-            if(accountRepository.GetAccount(username, password) != null)
-            {
-                return true;
-            }
-            return false;
-        }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
