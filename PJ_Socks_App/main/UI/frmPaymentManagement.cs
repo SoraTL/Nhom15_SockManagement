@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PJ_Socks_App.main.UI
 {
-    public partial class frmSignup : Form
+    public partial class frmPaymentManagement : Form
     {
-        public frmSignup()
+        public frmPaymentManagement()
         {
             InitializeComponent();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

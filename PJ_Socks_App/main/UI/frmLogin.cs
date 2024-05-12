@@ -1,4 +1,5 @@
-﻿using PJ_Socks_App.main.UI;
+﻿using PJ_Socks_App.main.DAO;
+using PJ_Socks_App.main.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,13 @@ namespace PJ_Socks_App
     {
 
         public event EventHandler LoginSuccess;
+        private readonly AccountService accountService;
+
 
         public frmLogin()
         {
             InitializeComponent();
+            accountService = new AccountService();
         }
         private void txtUsername_Enter(object sender, EventArgs e)
         {
@@ -44,7 +48,6 @@ namespace PJ_Socks_App
             {
                 txtPassword.Text = "";
                 txtPassword.ForeColor = Color.Black;
-                txtPassword.UseSystemPasswordChar = true;
             }
         }
 
@@ -61,43 +64,22 @@ namespace PJ_Socks_App
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-
-            if (true)
+            
+            if (!accountService.ValidateUser(username, password))
             {
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
                 txtPassword.Focus();
-                frmHome frmHome = new frmHome();
+                this.Hide();
+                lbThoat frmHome = new lbThoat(this);
                 frmHome.ShowDialog();
-                this.Close();
                 return;
             }
             else
             {
-                frmHome frmHome = new frmHome();
+                this.Hide();
+                lbThoat frmHome = new lbThoat(this);
                 frmHome.ShowDialog();
-                this.Close();
             }
-        }
-
-        private void btnSignup_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLogin_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

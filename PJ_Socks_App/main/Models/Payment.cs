@@ -11,7 +11,7 @@ namespace PJ_Socks_App.main.Models
     [Table(Name = "Payments")]
     public class Payment
     {
-        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
+        [Column(IsPrimaryKey = true)]
         public int Id { get; set; }
 
         [Column]

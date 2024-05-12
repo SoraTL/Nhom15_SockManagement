@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace PJ_Socks_App.main.Models
 {
-    [Table(Name = "OrderDetail")]
+    [Table(Name = "OrderDetails")]
     public class OrderDetail
     {
-        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
+        [Column(IsPrimaryKey = true)]
         public int Id { get; set; }
 
         [Column]

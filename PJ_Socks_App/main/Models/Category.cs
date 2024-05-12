@@ -10,7 +10,7 @@ namespace PJ_Socks_App.main.Models
     [Table(Name = "Categories")]
     public class Category
     {
-        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
+        [Column(IsPrimaryKey = true)]
         public int Id { get; set; }
 
         [Column]
