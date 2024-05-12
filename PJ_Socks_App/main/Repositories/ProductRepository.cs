@@ -1,4 +1,5 @@
 ﻿using PJ_Socks_App.main.DBContext;
+using PJ_Socks_App.main.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,12 @@ namespace PJ_Socks_App.main.Repositories
         public ProductRepository()
         {
             context = SockSalesDataContext.GetInstance();
+        }
+
+        public List<Product> getAll()
+        {
+            var products = context.Products.ToList();
+            return products;
         }
 
     }

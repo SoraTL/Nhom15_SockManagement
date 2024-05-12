@@ -15,6 +15,8 @@ namespace PJ_Socks_App.main.UI
     {
         private frmLogin loginForm;
         private frmUserManagement frmUserManagement;
+        private frmProductManagement frmProductManagement;
+
         public lbThoat(frmLogin frmLogin)
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace PJ_Socks_App.main.UI
 
         private void lbKhachHang_Click(object sender, EventArgs e)
         {
-            frmUserManagement = new frmUserManagement(loginForm);
+            frmUserManagement = new frmUserManagement(this);
             this.Hide();
             frmUserManagement.Show();
         }
@@ -42,6 +44,13 @@ namespace PJ_Socks_App.main.UI
         private void lbThoat_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbDMSP_Click(object sender, EventArgs e)
+        {
+            frmProductManagement = new  frmProductManagement(this);
+            this.Hide();
+            frmProductManagement.Show();
         }
     }
 }

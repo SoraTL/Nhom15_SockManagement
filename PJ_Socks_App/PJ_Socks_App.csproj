@@ -121,6 +121,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\night-sky-stars-clouds-scenery-landscape-anime-digital-art-4k-wallpaper-uhdpaper.com-768%400%40i.jpg" />
+    <None Include="Resources\tải xuống %281%29.png" />
     <None Include="Resources\tải xuống %283%29.jpg" />
     <None Include="Resources\tải xuống.png" />
     <EmbeddedResource Include="main\UI\frmHome.resx">

@@ -113,6 +113,17 @@ namespace PJ_Socks_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap night_sky_stars_clouds_scenery_landscape_anime_digital_art_4k_wallpaper_uhdpaper_com_768_0_i {
+            get {
+                object obj = ResourceManager.GetObject("night-sky-stars-clouds-scenery-landscape-anime-digital-art-4k-wallpaper-uhdpaper." +
+                        "com-768@0@i", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tải_xuống {
             get {
                 object obj = ResourceManager.GetObject("tải xuống", resourceCulture);

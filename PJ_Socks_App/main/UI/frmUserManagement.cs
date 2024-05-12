@@ -15,9 +15,9 @@ namespace PJ_Socks_App.main.UI
     public partial class frmUserManagement : Form
     {
         private readonly PersonService personService;
-        private frmLogin frmLogin;
+        private lbThoat frmLogin;
 
-        public frmUserManagement(frmLogin frmLogin)
+        public frmUserManagement(lbThoat frmLogin)
         {
             InitializeComponent();
             this.frmLogin = frmLogin;
@@ -112,8 +112,8 @@ namespace PJ_Socks_App.main.UI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtId.Text);
-
+            DataGridViewRow selectedRow = dgKhachHang.SelectedRows[0];
+            int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
             personService.delete(id);
 
         }
@@ -122,6 +122,7 @@ namespace PJ_Socks_App.main.UI
         {
             Person person = new Person() { Id = int.Parse(txtId.Text), Name = txtName.Text, Email=txtEmail.Text, Phone = txtPhone.Text, Role="user", Status="active" };
             personService.update(person);
+            LoadKH();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -134,6 +135,11 @@ namespace PJ_Socks_App.main.UI
             List<Person> people = personService.FindByName(txtSearch.Text);
 
             dgKhachHang.DataSource = people;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

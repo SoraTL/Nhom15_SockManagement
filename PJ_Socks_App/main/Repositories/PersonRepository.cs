@@ -39,14 +39,19 @@ namespace PJ_Socks_App.main.Repositories
 
         public void update(Person person)
         {
-            var updatedperson = context.Persons.FirstOrDefault(p => p.Id.Equals(person.Id));
-            if (updatedperson == null)
+            var existingPerson = context.Persons.FirstOrDefault(p => p.Id == person.Id);
+            if (existingPerson == null)
             {
-                MessageBox.Show("Người dùng chưa có trong database");
                 insert(person);
-                
             }
-            else{context.Persons.Attach(person);
+            else
+            {
+                existingPerson.Name = person.Name;
+                existingPerson.Role = person.Role;
+                existingPerson.Email = person.Email;
+                existingPerson.Phone = person.Phone;
+                existingPerson.Status = person.Status;
+
                 context.SubmitChanges();
             }
         }
@@ -57,6 +62,16 @@ namespace PJ_Socks_App.main.Repositories
             context.Persons.DeleteOnSubmit(person);
             context.SubmitChanges();
         }
+
+        public List<Person> FindPersonsByName(string searchQuery)
+        {
+            var persons = (from p in context.Persons
+                           where p.Name.Contains(searchQuery)
+                           select p).ToList();
+
+            return persons;
+        }
+
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using PJ_Socks_App.main.Repositories;
+﻿using PJ_Socks_App.main.Models;
+using PJ_Socks_App.main.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,12 @@ namespace PJ_Socks_App.main.Services
         {
             productRepository = new ProductRepository();
         }
+
+        public List<Product> getAll()
+        {
+            var products = productRepository.getAll();
+            return products;
+        } 
 
 
 

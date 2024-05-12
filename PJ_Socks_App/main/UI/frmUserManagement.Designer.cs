@@ -181,6 +181,7 @@ namespace PJ_Socks_App.main.UI
             this.pictureBox1.Image = global::PJ_Socks_App.Properties.Resources.tải_xuống__3_;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmUserManagement
             // 

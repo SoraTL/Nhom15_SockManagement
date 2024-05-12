@@ -31,7 +31,7 @@ namespace PJ_Socks_App.main.Services
         {
             personRepository.update(person);
         }
-
+            
         public void delete(int personId) 
         {
             personRepository.delete(personId);
