@@ -1,21 +1,27 @@
 ﻿CREATE DATABASE Sock_Selling
 GO
 
-DROP DATABASE Sock_Selling
-
 USE Sock_Selling
 GO
+
+CREATE TABLE Persons
+(
+    Id INT PRIMARY KEY,
+    Name NVARCHAR(50) NOT NULL,
+    Role NVARCHAR(50) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    Phone NVARCHAR(15),
+    Status NVARCHAR(20) NOT NULL
+);
 
 CREATE TABLE Accounts
 (
     Id INT PRIMARY KEY,
-    Name NVARCHAR(50) NOT NULL,
-    Email NVARCHAR(100) NOT NULL,
-	Username NVARCHAR(50) NOT NULL,
+    PersonId INT,
+    Username NVARCHAR(50) NOT NULL,
     Password NVARCHAR(100) NOT NULL,
-    Role NVARCHAR(50) NOT NULL,
-    Phone NVARCHAR(15),
-    Status NVARCHAR(20) NOT NULL
+    Status NVARCHAR(20) NOT NULL,
+    FOREIGN KEY (PersonId) REFERENCES Persons(Id)
 );
 
 CREATE TABLE Payments
@@ -95,7 +101,7 @@ CREATE TABLE Category_Product
     FOREIGN KEY (ProductId) REFERENCES Products(Id)
 );
 
-CREATE TABLE SaleOff
+CREATE TABLE SaleOffs
 (
     Id INT PRIMARY KEY,
     Description NVARCHAR(255),
@@ -106,7 +112,7 @@ CREATE TABLE SaleOff
     FOREIGN KEY (ProductId) REFERENCES Products(Id)
 );
 
-CREATE TABLE OrderDetail
+CREATE TABLE OrderDetails
 (
 	Id INT PRIMARY KEY,
 	OrderId INT,
@@ -119,21 +125,29 @@ CREATE TABLE OrderDetail
 )
 
 
--- Dữ liệu cho bảng Accounts
-INSERT INTO Accounts (Id, Name, Email, Username, Password, Role, Phone, Status)
+-- Chèn dữ liệu vào bảng Person
+INSERT INTO Persons (Id, Name, Email, Phone, Role, Status)
 VALUES 
-(1, 'John Doe', 'john@example.com', 'john' , 'password123', 'user', '1234567890', 'active'),
-(2, 'Anna Ish', 'anna@example.com', 'anna' , '123', 'user', '1234567890', 'active'),
-(3, 'IM ADMINNN', 'admin@example.com', 'admin', '111', 'admin', '0981273476', 'active'),
-(4, 'ACC NAY BI BAN', 'Ban@example.com', 'NON', '111', 'admin', '0981273476', 'inactive')
+    (1, 'Nguyen Van A', 'nguyenvana@example.com', '123456789', 'user', 'active'),
+    (2, 'Tran Thi B', 'tranthib@example.com', '987654321', 'user', 'active'),
+    (3, 'Le Van C', 'levanc@example.com', '456789123', 'user', 'inactive'),
+    (4, 'Pham Thi D', 'phamthid@example.com', '741852963', 'admin', 'active');
+
+-- Chèn dữ liệu vào bảng Accounts
+INSERT INTO Accounts (Id, PersonId, Username, Password, Status)
+VALUES 
+    (101, 1, 'nguyenvana', 'password123', 'active'),
+    (102, 2, 'tranthib', 'password456', 'active'),
+    (103, 3, 'levanc', 'password789', 'inactive'),
+    (104, 4, 'phamthid', 'passwordadmin', 'active');
 
 -- Dữ liệu cho bảng Payments
 INSERT INTO Payments (Id, Name, Description, AccountId)
-VALUES (1, 'Payment Method 1', 'Description of Payment Method 1', 1);
+VALUES (1, 'Payment Method 1', 'Description of Payment Method 1', 101);
 
 -- Dữ liệu cho bảng Orders
 INSERT INTO Orders (Id, Address, CreatedAt, AccountId)
-VALUES (1, '123 Street, City', GETDATE(), 1);
+VALUES (1, '123 Street, City', GETDATE(), 101);
 
 -- Dữ liệu cho bảng Categories
 INSERT INTO Categories (Id, Name, Description, Status)
@@ -158,15 +172,15 @@ INSERT INTO Category_Product (Id, CategoryId, ProductId)
 VALUES (1, 1, 1);
 
 -- Dữ liệu cho bảng SaleOff
-INSERT INTO SaleOff (Id, Description, StartDate, EndDate, Discount, ProductId)
+INSERT INTO SaleOffs (Id, Description, StartDate, EndDate, Discount, ProductId)
 VALUES (1, 'Sale 1', GETDATE(), DATEADD(DAY, 7, GETDATE()), 0.10, 1);
 
 -- Dữ liệu cho bảng OrderDetail
-INSERT INTO OrderDetail (Id, OrderId, ProductId, Quantity, Price, Status)
+INSERT INTO OrderDetails (Id, OrderId, ProductId, Quantity, Price, Status)
 VALUES (1, 1, 1, 2, 20.00, 'active');
 
 -- Dữ liệu cho bảng ProductImages
-INSERT INTO ProductImages (Id, ProductId, ImagePath, Description, IsPrimary, CreatedAt)
+INSERT INTO ProductImages (Id, ProductId, Image, Description, IsPrimary, CreatedAt)
 VALUES 
 (1, 1, '/images/product1.jpg', 'Front view of Product 1', 1, GETDATE()),
 (2, 1, '/images/product1-back.jpg', 'Back view of Product 1', 0, GETDATE()),
