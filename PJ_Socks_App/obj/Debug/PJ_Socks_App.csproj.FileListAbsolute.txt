@@ -29,3 +29,4 @@ C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\pjwinform\PJ_Socks_App\PJ_So
 C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\pjwinform\PJ_Socks_App\PJ_Socks_App\obj\Debug\aa\PJ_Socks_App.resources.dll
 C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\pjwinform\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.main.UI.frmProductManagement.resources
 C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\pjwinform\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.main.UI.frmSaleOffManagement.resources
+C:\Users\pc\OneDrive\Desktop\Work\Project\LTWindows\pjwinform\PJ_Socks_App\PJ_Socks_App\obj\Debug\PJ_Socks_App.main.UI.Description.resources

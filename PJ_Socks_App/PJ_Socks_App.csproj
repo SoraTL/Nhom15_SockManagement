@@ -56,44 +56,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="main\Models\Person.cs" />
+    <Compile Include="main\Models\responses\DGProduct.cs" />
     <Compile Include="main\Repositories\AccountRepository.cs" />
     <Compile Include="main\Repositories\CategoryProductRepository.cs" />
     <Compile Include="main\Repositories\CategoryRepository.cs" />
-    <Compile Include="main\Repositories\OrderDetailRepository.cs" />
-    <Compile Include="main\Repositories\OrderRepository.cs" />
-    <Compile Include="main\Repositories\PaymentRepository.cs" />
     <Compile Include="main\Repositories\PersonRepository.cs" />
-    <Compile Include="main\Repositories\ProducSizeRepository.cs" />
     <Compile Include="main\Repositories\ProductImageRepository.cs" />
     <Compile Include="main\Repositories\ProductRepository.cs" />
     <Compile Include="main\Repositories\SaleOffRepository.cs" />
-    <Compile Include="main\Repositories\SizeRepository.cs" />
     <Compile Include="main\Services\AccountService.cs" />
-    <Compile Include="main\DBContext\SockSalesDataContext.cs" />
+    <Compile Include="main\Services\ProductImageService.cs" />
+    <Compile Include="main\SockSalesDataContext.cs" />
     <Compile Include="main\Models\Account.cs" />
     <Compile Include="main\Models\Category.cs" />
     <Compile Include="main\Models\CategoryProduct.cs" />
-    <Compile Include="main\Models\Order.cs" />
-    <Compile Include="main\Models\OrderDetail.cs" />
-    <Compile Include="main\Models\Payment.cs" />
     <Compile Include="main\Models\Product.cs" />
     <Compile Include="main\Models\ProductImage.cs" />
-    <Compile Include="main\Models\ProductSize.cs" />
     <Compile Include="main\Models\SaleOff.cs" />
-    <Compile Include="main\Models\Size.cs" />
     <Compile Include="main\Services\PersonService.cs" />
     <Compile Include="main\Services\ProductService.cs" />
-    <Compile Include="main\UI\frmPaymentManagement.cs">
+    <Compile Include="main\UI\Description.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main\UI\frmPaymentManagement.Designer.cs">
-      <DependentUpon>frmPaymentManagement.cs</DependentUpon>
+    <Compile Include="main\UI\Description.Designer.cs">
+      <DependentUpon>Description.cs</DependentUpon>
     </Compile>
-    <Compile Include="main\UI\frmHome.cs">
+    <Compile Include="main\UI\DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main\UI\frmHome.Designer.cs">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <Compile Include="main\UI\DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="main\UI\frmLogin.cs">
       <SubType>Form</SubType>
@@ -125,8 +117,11 @@
     <None Include="Resources\tải xuống %281%29.png" />
     <None Include="Resources\tải xuống %283%29.jpg" />
     <None Include="Resources\tải xuống.png" />
-    <EmbeddedResource Include="main\UI\frmHome.resx">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <EmbeddedResource Include="main\UI\DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\UI\Description.resx">
+      <DependentUpon>Description.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main\UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

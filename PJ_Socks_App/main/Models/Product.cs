@@ -11,7 +11,7 @@ namespace PJ_Socks_App.main.Models
     [Table(Name = "Products")]
     public class Product
     {
-        [Column(IsPrimaryKey = true)]
+        [Column(IsPrimaryKey = true,IsDbGenerated =true)]
         public int Id { get; set; }
 
         [Column]
@@ -25,7 +25,7 @@ namespace PJ_Socks_App.main.Models
 
         [Column]
         public string Color { get; set; }
-
+ 
         [Column]
         public string Design { get; set; }
 
@@ -37,6 +37,8 @@ namespace PJ_Socks_App.main.Models
 
         [Column]
         public int CategoryId { get; set; }
+        [Column]
+        public string Status { get; set; }
 
         private EntityRef<Category> _category;
 

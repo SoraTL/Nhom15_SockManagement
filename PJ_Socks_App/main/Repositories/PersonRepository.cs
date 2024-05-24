@@ -33,8 +33,15 @@ namespace PJ_Socks_App.main.Repositories
 
         public void insert(Person person)
         {
-            context.Persons.InsertOnSubmit(person);
-            context.SubmitChanges();
+            var existingPerson = context.Persons.FirstOrDefault(p => p.Id == person.Id);
+            if (existingPerson != null)
+            {
+                MessageBox.Show("Đã tồn tại");
+            }
+            else {
+                context.Persons.InsertOnSubmit(person);
+                context.SubmitChanges();
+            }
         }
 
         public void update(Person person)

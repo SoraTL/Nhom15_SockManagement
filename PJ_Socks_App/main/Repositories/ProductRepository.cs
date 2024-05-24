@@ -23,5 +23,23 @@ namespace PJ_Socks_App.main.Repositories
             return products;
         }
 
+        public Product getProduct(int id)
+        {
+            var product = context.Products.FirstOrDefault(p => p.Id == id);
+            return product;
+        }
+
+        public void insert(Product product)
+        {
+            context.Products.InsertOnSubmit(product);
+            context.SubmitChanges();
+        }
+
+        public void updateDescription(int productId,  string description)
+        {
+            var product = getProduct(productId);
+            product.Description = description;
+            context.SubmitChanges();
+        }
     }
 }

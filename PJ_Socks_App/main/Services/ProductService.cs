@@ -23,7 +23,20 @@ namespace PJ_Socks_App.main.Services
             return products;
         } 
 
+        public Product getProduct(int id)
+        {
+            return productRepository.getProduct(id);
+        }
 
+        public void insert(Product product)
+        {
+            productRepository.insert(product);
+        }
+
+        public void updateDescription(int productId, string description)
+        {
+            productRepository.updateDescription(productId, description);
+        }
 
     }
 }

@@ -22,7 +22,7 @@ namespace PJ_Socks_App.main.UI
             InitializeComponent();
             this.frmLogin = frmLogin;
             personService = new PersonService();
-            LoadKH();
+            LoadSearchForDG();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -64,15 +64,14 @@ namespace PJ_Socks_App.main.UI
 
         private void dgKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgKhachHang.SelectedRows.Count > 0)
-            {
+            
                 DataGridViewRow row = dgKhachHang.SelectedRows[0];
 
-                txtId.Text = row.Cells["MaKhachHang"].Value.ToString();
-                txtName.Text = row.Cells["TenKhachHang"].Value.ToString();
+                txtId.Text = row.Cells["Id"].Value.ToString();
+                txtName.Text = row.Cells["Name"].Value.ToString();
                 txtEmail.Text = row.Cells["Email"].Value.ToString();
                 txtPhone.Text = row.Cells["Phone"].Value.ToString();
-            }
+            
 
         }
 
@@ -92,14 +91,19 @@ namespace PJ_Socks_App.main.UI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            Person person = new Person() { Id = int.Parse(txtId.Text), Name = txtName.Text, Email = txtEmail.Text, Role = "user", Phone = txtPhone.Text, Status = "active" };
+            if (txtName.Text.Equals("") || txtEmail.Text.Equals("") || txtPhone.Text.Equals("")) 
+            {
+                MessageBox.Show("Nhập thiếu thông tin");
+                return;
+            }
+            Person person = new Person() { Name = txtName.Text, Email = txtEmail.Text, Role = "user", Phone = txtPhone.Text, Status = "active" };
             personService.insert(person);
-            LoadKH();
+            LoadSearchForDG();
         }
 
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
-
+            dgKhachHang.SelectionChanged += DataGridView1_SelectionChanged;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -115,19 +119,21 @@ namespace PJ_Socks_App.main.UI
             DataGridViewRow selectedRow = dgKhachHang.SelectedRows[0];
             int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
             personService.delete(id);
-
+            LoadSearchForDG();
+            MessageBox.Show("Xóa thành công");
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             Person person = new Person() { Id = int.Parse(txtId.Text), Name = txtName.Text, Email=txtEmail.Text, Phone = txtPhone.Text, Role="user", Status="active" };
             personService.update(person);
-            LoadKH();
+            LoadSearchForDG();
+            MessageBox.Show("Sửa thành công");
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
+            LoadSearchForDG();
         }
 
         private void LoadSearchForDG()
@@ -140,6 +146,21 @@ namespace PJ_Socks_App.main.UI
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgKhachHang.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgKhachHang.SelectedRows[0];
+
+                var cellValue = selectedRow.Cells[0].Value;
+
+                txtId.Text = selectedRow.Cells[0].Value.ToString();
+                txtName.Text = selectedRow.Cells[1].Value.ToString();
+                txtEmail.Text = selectedRow.Cells[2].Value.ToString();
+                txtPhone.Text = selectedRow.Cells[3].Value.ToString();
+            }
         }
     }
 }

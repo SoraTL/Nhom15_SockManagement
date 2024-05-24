@@ -125,6 +125,7 @@ namespace PJ_Socks_App.main.UI
             resources.ApplyResources(this.dgKhachHang, "dgKhachHang");
             this.dgKhachHang.Name = "dgKhachHang";
             this.dgKhachHang.RowTemplate.Height = 24;
+            this.dgKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhachHang_CellContentClick);
             // 
             // btnThoat

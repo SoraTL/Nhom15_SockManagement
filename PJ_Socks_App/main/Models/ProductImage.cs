@@ -17,8 +17,8 @@ namespace PJ_Socks_App.main.Models
         [Column]
         public int ProductId { get; set; }
 
-        [Column(DbType = "Image")]
-        public Binary Image { get; set; }
+        [Column(DbType = "VARBINARY(MAX)")]
+        public byte[] Image { get; set; }
 
         [Column]
         public string Description { get; set; }

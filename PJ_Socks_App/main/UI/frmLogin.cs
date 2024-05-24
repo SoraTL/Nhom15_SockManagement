@@ -68,10 +68,7 @@ namespace PJ_Socks_App
             if (!accountService.ValidateUser(username, password))
             {
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
-                txtPassword.Focus();
-                this.Hide();
-                lbThoat frmHome = new lbThoat(this);
-                frmHome.ShowDialog();
+                txtUsername.Focus();
                 return;
             }
             else
